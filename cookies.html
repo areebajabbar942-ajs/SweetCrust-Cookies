@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Our Cookies | SweetCrust Cookies</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+                    NAVBAR
+===================================================== -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🍪 SweetCrust
+        </div>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="cookies.html" class="active">
+                    Cookies
+                </a>
+            </li>
+
+            <li>
+                <a href="register.html">
+                    Register
+                </a>
+            </li>
+
+            <li>
+                <a href="track.html">
+                    Track Order
+                </a>
+            </li>
+
+            <li>
+                <a href="cancel.html">
+                    Cancel Order
+                </a>
+            </li>
+
+            <li>
+                <a href="cart.html">
+                    🛒 Cart
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+                    PAGE BANNER
+===================================================== -->
+
+<section class="catalogue-banner">
+
+    <div class="catalogue-banner-content">
+
+        <span>
+            <i class="fa-solid fa-cookie-bite"></i>
+            SWEETCRUST COLLECTION
+        </span>
+
+        <h1>
+            Our Cookie Collection
+        </h1>
+
+        <p>
+            Discover freshly baked cookies made with premium
+            ingredients and lots of love.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                    SEARCH SECTION
+===================================================== -->
+
+<section class="catalogue-tools">
+
+    <div class="catalogue-search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            id="cookieSearch"
+            placeholder="Search your favorite cookie..."
+            onkeyup="searchCookies()"
+        >
+
+        <button
+            type="button"
+            onclick="clearSearch()">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+    <!-- FILTER BUTTONS -->
+
+    <div class="cookie-filters">
+
+        <button
+            class="filter-btn active"
+            onclick="filterCookies('all', this)">
+
+            All Cookies
+
+        </button>
+
+
+        <button
+            class="filter-btn"
+            onclick="filterCookies('chocolate', this)">
+
+            Chocolate
+
+        </button>
+
+
+        <button
+            class="filter-btn"
+            onclick="filterCookies('classic', this)">
+
+            Classic
+
+        </button>
+
+
+        <button
+            class="filter-btn"
+            onclick="filterCookies('special', this)">
+
+            Special
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                    COOKIE CATALOG
+===================================================== -->
+
+<section class="modern-cookie-section">
+
+    <div class="section-heading">
+
+        <span>
+            OUR SIGNATURE FLAVORS
+        </span>
+
+        <h2>
+            Choose Your Favorite
+        </h2>
+
+        <p>
+            From classic favorites to rich chocolate creations,
+            there is something for everyone.
+        </p>
+
+    </div>
+
+
+
+    <div
+        class="modern-cookie-grid"
+        id="cookieGrid">
+
+
+        <!-- =================================================
+                        COOKIE 1
+        ================================================= -->
+
+        <div
+            class="modern-cookie-card"
+            data-name="chocolate chip"
+            data-category="chocolate">
+
+
+            <div class="cookie-image">
+
+                <img
+                    src="ChocolateChipCookies.jpeg"
+                    alt="Chocolate Chip Cookie">
+
+                <span class="cookie-badge">
+                    Popular
+                </span>
+
+            </div>
+
+
+            <div class="modern-cookie-content">
+
+                <div class="cookie-rating">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>
+                        4.9
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Chocolate Chip
+                </h3>
+
+
+                <p>
+                    Soft and chewy cookies loaded with
+                    premium chocolate chips.
+                </p>
+
+
+                <div class="cookie-card-bottom">
+
+                    <strong>
+                        Rs. 350
+                    </strong>
+
+                    <a
+                        href="cookie-details.html?cookie=chocolatechip"
+                        class="cookie-view-btn">
+
+                        View Details
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+                        COOKIE 2
+        ================================================= -->
+
+        <div
+            class="modern-cookie-card"
+            data-name="red velvet"
+            data-category="special">
+
+
+            <div class="cookie-image">
+
+                <img
+                    src="redvelvet cookie.jpg"
+                    alt="Red Velvet Cookie">
+
+                <span class="cookie-badge special">
+                    Special
+                </span>
+
+            </div>
+
+
+            <div class="modern-cookie-content">
+
+                <div class="cookie-rating">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>
+                        4.8
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Red Velvet
+                </h3>
+
+
+                <p>
+                    Rich red velvet cookies with creamy
+                    white chocolate chunks.
+                </p>
+
+
+                <div class="cookie-card-bottom">
+
+                    <strong>
+                        Rs. 450
+                    </strong>
+
+                    <a
+                        href="cookie-details.html?cookie=redvelvet"
+                        class="cookie-view-btn">
+
+                        View Details
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+                        COOKIE 3
+        ================================================= -->
+
+        <div
+            class="modern-cookie-card"
+            data-name="triple chocolate"
+            data-category="chocolate">
+
+
+            <div class="cookie-image">
+
+                <img
+                    src="triple chocolate.jpg"
+                    alt="Triple Chocolate Cookie">
+
+                <span class="cookie-badge">
+                    Bestseller
+                </span>
+
+            </div>
+
+
+            <div class="modern-cookie-content">
+
+                <div class="cookie-rating">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>
+                        5.0
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Triple Chocolate
+                </h3>
+
+
+                <p>
+                    A chocolate lover's dream with dark,
+                    milk and white chocolate.
+                </p>
+
+
+                <div class="cookie-card-bottom">
+
+                    <strong>
+                        Rs. 450
+                    </strong>
+
+                    <a
+                        href="cookie-details.html?cookie=triplechocolate"
+                        class="cookie-view-btn">
+
+                        View Details
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+                        COOKIE 4
+        ================================================= -->
+
+        <div
+            class="modern-cookie-card"
+            data-name="oatmeal raisin"
+            data-category="classic">
+
+
+            <div class="cookie-image">
+
+                <img
+                    src="Oatmeal-Raisin-Cookies-.jpg"
+                    alt="Oatmeal Raisin Cookie">
+
+            </div>
+
+
+            <div class="modern-cookie-content">
+
+                <div class="cookie-rating">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>
+                        4.7
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Oatmeal Raisin
+                </h3>
+
+
+                <p>
+                    Fresh oatmeal cookies blended with
+                    juicy raisins and cinnamon.
+                </p>
+
+
+                <div class="cookie-card-bottom">
+
+                    <strong>
+                        Rs. 350
+                    </strong>
+
+                    <a
+                        href="cookie-details.html?cookie=oatmeal"
+                        class="cookie-view-btn">
+
+                        View Details
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+                        COOKIE 5
+        ================================================= -->
+
+        <div
+            class="modern-cookie-card"
+            data-name="chocolate peanut butter"
+            data-category="special">
+
+
+            <div class="cookie-image">
+
+                <img
+                    src="Chocolate-Peanut-Butter.jpg"
+                    alt="Chocolate Peanut Butter Cookie">
+
+                <span class="cookie-badge special">
+                    New
+                </span>
+
+            </div>
+
+
+            <div class="modern-cookie-content">
+
+                <div class="cookie-rating">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>
+                        4.8
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Chocolate Peanut Butter
+                </h3>
+
+
+                <p>
+                    Creamy peanut butter cookies with
+                    rich chocolate flavor.
+                </p>
+
+
+                <div class="cookie-card-bottom">
+
+                    <strong>
+                        Rs. 400
+                    </strong>
+
+                    <a
+                        href="cookie-details.html?cookie=peanutbutter"
+                        class="cookie-view-btn">
+
+                        View Details
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+                        COOKIE 6
+        ================================================= -->
+
+        <div
+            class="modern-cookie-card"
+            data-name="double chocolate"
+            data-category="chocolate">
+
+
+            <div class="cookie-image">
+
+                <img
+                    src="double chocolate.jpg"
+                    alt="Double Chocolate Cookie">
+
+                <span class="cookie-badge">
+                    Favorite
+                </span>
+
+            </div>
+
+
+            <div class="modern-cookie-content">
+
+                <div class="cookie-rating">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>
+                        4.9
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Double Chocolate
+                </h3>
+
+
+                <p>
+                    Soft chocolate cookies filled with
+                    extra chocolate chips.
+                </p>
+
+
+                <div class="cookie-card-bottom">
+
+                    <strong>
+                        Rs. 500
+                    </strong>
+
+                    <a
+                        href="cookie-details.html?cookie=doublechocolate"
+                        class="cookie-view-btn">
+
+                        View Details
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- NO RESULTS -->
+
+    <div
+        id="noCookies"
+        class="no-cookies">
+
+        <i class="fa-solid fa-cookie-bite"></i>
+
+        <h3>
+            No cookies found
+        </h3>
+
+        <p>
+            Try searching for another flavor.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                    COOKIE BOXES
+===================================================== -->
+
+<section class="modern-box-section">
+
+
+    <div class="section-heading">
+
+        <span>
+            PERFECT FOR SHARING
+        </span>
+
+        <h2>
+            Our Cookie Boxes
+        </h2>
+
+        <p>
+            Pick your box size and create your own
+            delicious combination of flavors.
+        </p>
+
+    </div>
+
+
+    <div class="modern-box-grid">
+
+
+        <!-- 3 PACK -->
+
+        <div class="modern-box-card">
+
+            <div class="box-image">
+
+                <img
+                    src=".cookiebox3.jpg"
+                    alt="3 Pack Cookie Box">
+
+                <span>
+                    3 PACK
+                </span>
+
+            </div>
+
+
+            <div class="box-card-content">
+
+                <h3>
+                    3-Pack Box
+                </h3>
+
+                <p>
+                    Choose any 3 cookies and create
+                    your own delicious combination.
+                </p>
+
+                <div class="box-price">
+                    Rs. 850
+                </div>
+
+                <a
+                    href="customixe.html?pack=6"
+                    class="box-customize-btn">
+
+                    Customize Box
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 6 PACK -->
+
+        <div class="modern-box-card featured-box">
+
+            <div class="box-image">
+
+                <img
+                    src="cookiebox6.jpg"
+                    alt="6 Pack Cookie Box">
+
+                <span>
+                    MOST POPULAR
+                </span>
+
+            </div>
+
+
+            <div class="box-card-content">
+
+                <h3>
+                    6-Pack Box
+                </h3>
+
+                <p>
+                    Choose any 6 cookies and create
+                    your perfect variety box.
+                </p>
+
+                <div class="box-price">
+                    Rs. 1050
+                </div>
+
+                <a
+                    href="customixe.html?pack=6"
+                    class="box-customize-btn">
+
+                    Customize Box
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 12 PACK -->
+
+        <div class="modern-box-card">
+
+            <div class="box-image">
+
+                <img
+                    src="cookiebox12.jpg"
+                    alt="12 Pack Cookie Box">
+
+                <span>
+                    12 PACK
+                </span>
+
+            </div>
+
+
+            <div class="box-card-content">
+
+                <h3>
+                    12-Pack Box
+                </h3>
+
+                <p>
+                    Choose any 12 cookies and make
+                    a special box for sharing.
+                </p>
+
+                <div class="box-price">
+                    Rs. 2100
+                </div>
+
+                <a
+                    href="customixe.html?pack=12"
+                    class="box-customize-btn">
+
+                    Customize Box
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                    JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+                    SEARCH COOKIES
+===================================================== */
+
+function searchCookies() {
+
+    let search =
+        document
+        .getElementById("cookieSearch")
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    let cards =
+        document.querySelectorAll(
+            ".modern-cookie-card"
+        );
+
+
+    let found = false;
+
+
+    cards.forEach(function(card) {
+
+        let name =
+            card
+            .getAttribute("data-name")
+            .toLowerCase();
+
+
+        if (name.includes(search)) {
+
+            card.style.display = "block";
+
+            found = true;
+
+        }
+        else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    document.getElementById("noCookies").style.display =
+        found ? "none" : "block";
+
+}
+
+
+
+/* =====================================================
+                    FILTER COOKIES
+===================================================== */
+
+function filterCookies(category, button) {
+
+    let cards =
+        document.querySelectorAll(
+            ".modern-cookie-card"
+        );
+
+
+    let found = false;
+
+
+    /* Active button */
+
+    document
+    .querySelectorAll(".filter-btn")
+    .forEach(function(btn) {
+
+        btn.classList.remove("active");
+
+    });
+
+
+    button.classList.add("active");
+
+
+    /* Clear search */
+
+    document.getElementById("cookieSearch").value = "";
+
+
+    cards.forEach(function(card) {
+
+        let cardCategory =
+            card.getAttribute("data-category");
+
+
+        if (
+            category === "all" ||
+            cardCategory === category
+        ) {
+
+            card.style.display = "block";
+
+            found = true;
+
+        }
+        else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    document.getElementById("noCookies").style.display =
+        found ? "none" : "block";
+
+}
+
+
+
+/* =====================================================
+                    CLEAR SEARCH
+===================================================== */
+
+function clearSearch() {
+
+    document.getElementById("cookieSearch").value = "";
+
+    document
+    .querySelectorAll(".modern-cookie-card")
+    .forEach(function(card) {
+
+        card.style.display = "block";
+
+    });
+
+
+    document.getElementById("noCookies").style.display =
+        "none";
+
+
+    /* Reset filter */
+
+    document
+    .querySelectorAll(".filter-btn")
+    .forEach(function(btn) {
+
+        btn.classList.remove("active");
+
+    });
+
+
+    document
+    .querySelector(".filter-btn")
+    .classList.add("active");
+
+}
+
+</script>
+
+
+</body>
+
+</html>

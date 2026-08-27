@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>My Cart | SweetCrust Cookies</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🍪 SweetCrust
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="cookies.html">Cookies</a>
+            </li>
+
+            <li>
+                <a href="register.html">Register</a>
+            </li>
+
+            <li>
+                <a href="track.html">Track Order</a>
+            </li>
+
+            <li>
+                <a href="cancel.html">Cancel Order</a>
+            </li>
+
+            <li>
+                <a href="cart.html" class="active">
+                    🛒 Cart
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= PAGE HEADER ================= -->
+
+<section class="cart-banner">
+
+    <div>
+
+        <span>
+            YOUR SHOPPING BAG
+        </span>
+
+        <h1>
+            My Cart
+        </h1>
+
+        <p>
+            Review your delicious selections before checkout.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CART ================= -->
+
+<section class="professional-cart-section">
+
+    <div class="professional-cart-container">
+
+
+        <!-- ================= CART ITEMS ================= -->
+
+        <div class="cart-items-area">
+
+            <div class="cart-heading">
+
+                <div>
+
+                    <h2>
+                        Your Items
+                    </h2>
+
+                    <p id="itemCount">
+                        0 items
+                    </p>
+
+                </div>
+
+                <a href="cookies.html">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Continue Shopping
+
+                </a>
+
+            </div>
+
+
+            <div id="cartContainer">
+
+                <!-- Cart items appear here -->
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= SUMMARY ================= -->
+
+        <aside class="professional-summary">
+
+            <h2>
+                Order Summary
+            </h2>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong id="subtotal">
+                    Rs. 0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Delivery
+                </span>
+
+                <strong id="delivery">
+                    Rs. 0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-divider"></div>
+
+
+            <div class="summary-grand-total">
+
+                <span>
+                    Grand Total
+                </span>
+
+                <strong id="grandTotal">
+                    Rs. 0
+                </strong>
+
+            </div>
+
+
+            <a
+                href="checkout.html"
+                class="checkout-cart-btn"
+                id="checkoutButton">
+
+                Proceed to Checkout
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <div class="secure-checkout">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+
+                    <strong>
+                        Secure Checkout
+                    </strong>
+
+                    <span>
+                        Your order information is safe.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+/* =====================================================
+                    DISPLAY CART
+===================================================== */
+
+function displayCart() {
+
+    let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+
+    let container =
+        document.getElementById("cartContainer");
+
+
+    let subtotal = 0;
+
+    let totalQuantity = 0;
+
+
+
+    /* ================= EMPTY CART ================= */
+
+    if (cart.length === 0) {
+
+        container.innerHTML = `
+
+            <div class="professional-empty-cart">
+
+                <div class="empty-cart-icon">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                </div>
+
+                <h2>
+                    Your cart is empty
+                </h2>
+
+                <p>
+                    Looks like you haven't added
+                    any delicious cookies yet.
+                </p>
+
+                <a
+                    href="cookies.html"
+                    class="empty-cart-btn">
+
+                    Explore Cookies
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        `;
+
+
+        document.getElementById("itemCount").textContent =
+            "0 items";
+
+
+        document.getElementById("subtotal").textContent =
+            "Rs. 0";
+
+
+        document.getElementById("delivery").textContent =
+            "Rs. 0";
+
+
+        document.getElementById("grandTotal").textContent =
+            "Rs. 0";
+
+
+        return;
+
+    }
+
+
+
+    /* ================= CLEAR OLD ITEMS ================= */
+
+    container.innerHTML = "";
+
+
+
+    /* ================= DISPLAY ITEMS ================= */
+
+    cart.forEach(function(item, index) {
+
+
+        let itemTotal =
+    item.price * item.quantity;
+
+subtotal += itemTotal;
+
+totalQuantity += item.quantity;
+
+
+let productImage = item.image;
+
+if (item.customized && item.selectedBoxSize) {
+
+    productImage =
+        item.selectedBoxSize === 3
+            ? ".cookiebox3.jpg"
+            : item.selectedBoxSize === 6
+                ? "cookiebox6.jpg"
+                : "cookiebox12.jpg";
+}
+
+
+
+        /* ================= SELECTED FLAVORS ================= */
+
+        let flavorsHTML = "";
+
+
+        if (
+            item.selectedFlavors &&
+            item.selectedFlavors.length > 0
+        ) {
+
+            flavorsHTML = `
+
+                <div class="selected-flavors">
+
+                    <strong>
+                        Selected Flavors:
+                    </strong>
+
+                    <div class="flavor-list">
+
+                        ${item.selectedFlavors.map(
+                            function(flavor) {
+
+                                return `
+
+                                    <span>
+
+                                        ${flavor.name}
+
+                                        × ${flavor.quantity}
+
+                                    </span>
+
+                                `;
+
+                            }
+                        ).join("")}
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+
+        /* ================= ITEM HTML ================= */
+
+        container.innerHTML += `
+
+            <div
+                class="professional-cart-item"
+                id="cartItem-${index}">
+
+
+                <!-- IMAGE -->
+
+                <div class="cart-product-image">
+
+    <img
+        src="${productImage}"
+        alt="${item.name}"
+    >
+
+</div>
+}
+
+  <!-- INFORMATION -->
+
+                <div class="cart-product-info">
+
+                    <span class="cart-product-type">
+
+                        ${
+                            item.selectedFlavors
+                            ? "COOKIE BOX"
+                            : "SIGNATURE COOKIE"
+                        }
+
+                    </span>
+
+
+                    <h3>
+                        ${item.name}
+                    </h3>
+
+
+                    <p class="cart-product-price">
+
+                        Rs. ${item.price} each
+
+                    </p>
+
+
+                    ${flavorsHTML}
+
+
+                    <!-- QUANTITY -->
+
+                    <div class="cart-item-bottom">
+
+                        <div class="cart-quantity">
+
+                            <button
+                                onclick="decreaseItem(${index})">
+
+                                −
+
+                            </button>
+
+
+                            <span>
+                                ${item.quantity}
+                            </span>
+
+
+                            <button
+                                onclick="increaseItem(${index})">
+
+                                +
+
+                            </button>
+
+                        </div>
+
+
+                        <button
+                            class="remove-cart-btn"
+                            onclick="removeItem(${index})">
+
+                            <i class="fa-regular fa-trash-can"></i>
+
+                            Remove
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ITEM TOTAL -->
+
+                <div class="cart-item-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong>
+                        Rs. ${itemTotal}
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        `;
+
+    });
+
+   
+
+
+    /* ================= DELIVERY ================= */
+
+    let delivery = 0;
+
+
+    /*
+        Free delivery for orders
+        of Rs. 3000 or above
+    */
+
+    if (subtotal > 0 && subtotal < 3000) {
+
+        delivery = 200;
+
+    }
+
+
+
+    let grandTotal =
+        subtotal + delivery;
+
+
+
+    /* ================= UPDATE SUMMARY ================= */
+
+    document.getElementById("itemCount").textContent =
+        totalQuantity +
+        (totalQuantity === 1 ? " item" : " items");
+
+
+    document.getElementById("subtotal").textContent =
+        "Rs. " + subtotal;
+
+
+    document.getElementById("delivery").textContent =
+        delivery === 0
+        ? "FREE"
+        : "Rs. " + delivery;
+
+
+    document.getElementById("grandTotal").textContent =
+        "Rs. " + grandTotal;
+
+}
+
+
+
+/* =====================================================
+                    INCREASE
+===================================================== */
+
+function increaseItem(index) {
+
+    let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+
+    cart[index].quantity++;
+
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+
+    displayCart();
+
+}
+
+
+
+/* =====================================================
+                    DECREASE
+===================================================== */
+
+function decreaseItem(index) {
+
+    let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+
+    if (cart[index].quantity > 1) {
+
+        cart[index].quantity--;
+
+    }
+    else {
+
+        removeItem(index);
+
+        return;
+
+    }
+
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+
+    displayCart();
+
+}
+
+
+
+/* =====================================================
+                    REMOVE ITEM
+===================================================== */
+
+function removeItem(index) {
+
+    let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+
+    cart.splice(index, 1);
+
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+
+    displayCart();
+
+
+    showCartNotification(
+        "Item removed from your cart."
+    );
+
+}
+
+
+
+/* =====================================================
+                NOTIFICATION
+===================================================== */
+
+function showCartNotification(text) {
+
+    let notification =
+        document.createElement("div");
+
+
+    notification.className =
+        "cart-notification";
+
+
+    notification.innerHTML = `
+
+        <div class="notification-icon">
+
+            <i class="fa-solid fa-check"></i>
+
+        </div>
+
+        <span>
+            ${text}
+        </span>
+
+    `;
+
+
+    document.body.appendChild(notification);
+
+
+    setTimeout(function() {
+
+        notification.classList.add("show");
+
+    }, 50);
+
+
+    setTimeout(function() {
+
+        notification.classList.remove("show");
+
+
+        setTimeout(function() {
+
+            notification.remove();
+
+        }, 400);
+
+    }, 2500);
+
+}
+
+
+
+/* =====================================================
+                    LOAD CART
+===================================================== */
+
+window.onload = displayCart;
+
+</script>
+
+
+</body>
+
+</html>

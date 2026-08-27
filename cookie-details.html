@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Cookie Details | SweetCrust Cookies</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🍪 SweetCrust
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="cookies.html">Cookies</a>
+            </li>
+
+            <li>
+                <a href="register.html">Register</a>
+            </li>
+
+            <li>
+                <a href="track.html">Track Order</a>
+            </li>
+
+            <li>
+                <a href="cancel.html">Cancel Order</a>
+            </li>
+
+            <li>
+                <a href="cart.html">🛒 Cart</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= BREADCRUMB ================= -->
+
+<div class="cookie-breadcrumb">
+
+    <a href="cookies.html">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back to Cookies
+    </a>
+
+</div>
+
+
+
+<!-- ================= COOKIE DETAILS ================= -->
+
+<section class="cookie-detail-section">
+
+    <div class="cookie-detail-container">
+
+
+        <!-- IMAGE -->
+
+        <div class="detail-image-box">
+
+            <img
+                id="cookieImage"
+                src="ChocolateChipCookies.jpeg"
+                alt="Cookie">
+
+            <span
+                id="cookieBadge"
+                class="detail-badge">
+
+                Popular
+
+            </span>
+
+        </div>
+
+
+
+        <!-- DETAILS -->
+
+        <div class="detail-content">
+
+            <span class="detail-category">
+                SWEETCRUST SIGNATURE
+            </span>
+
+
+            <h1 id="cookieName">
+                Chocolate Chip
+            </h1>
+
+
+            <div class="detail-rating">
+
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+
+                <span id="cookieRating">
+                    4.9 / 5
+                </span>
+
+            </div>
+
+
+            <p
+                id="cookieDescription"
+                class="detail-description">
+
+                Soft and chewy cookies loaded with
+                premium chocolate chips.
+
+            </p>
+
+
+            <!-- PRICE -->
+
+            <div class="detail-price">
+
+                <span>Price</span>
+
+                <strong id="cookiePrice">
+                    Rs. 350
+                </strong>
+
+            </div>
+
+
+
+            <!-- QUANTITY -->
+
+            <div class="quantity-section">
+
+                <span>
+                    Quantity
+                </span>
+
+                <div class="quantity-control">
+
+                    <button
+                        type="button"
+                        onclick="decreaseQuantity()">
+
+                        −
+
+                    </button>
+
+
+                    <span id="quantity">
+                        1
+                    </span>
+
+
+                    <button
+                        type="button"
+                        onclick="increaseQuantity()">
+
+                        +
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TOTAL -->
+
+            <div class="detail-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="totalPrice">
+                    Rs. 350
+                </strong>
+
+            </div>
+
+
+
+            <!-- ADD TO CART -->
+
+            <button
+                type="button"
+                class="detail-cart-btn"
+                onclick="addToCart()">
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                Add to Cart
+
+            </button>
+
+
+            <a
+                href="cart.html"
+                class="view-cart-link">
+
+                View My Cart
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="detail-features">
+
+    <div class="detail-feature">
+
+        <i class="fa-solid fa-cookie-bite"></i>
+
+        <div>
+            <strong>Freshly Baked</strong>
+            <span>Made fresh with quality ingredients</span>
+        </div>
+
+    </div>
+
+
+    <div class="detail-feature">
+
+        <i class="fa-solid fa-box"></i>
+
+        <div>
+            <strong>Carefully Packed</strong>
+            <span>Secure packaging for every order</span>
+        </div>
+
+    </div>
+
+
+    <div class="detail-feature">
+
+        <i class="fa-solid fa-truck-fast"></i>
+
+        <div>
+            <strong>Fast Delivery</strong>
+            <span>Delivered fresh to your doorstep</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+/* =====================================================
+                COOKIE DATA
+===================================================== */
+
+const cookieData = {
+
+    chocolatechip: {
+
+        name: "Chocolate Chip",
+
+        price: 350,
+
+        image: "ChocolateChipCookies.jpeg",
+
+        rating: "4.9 / 5",
+
+        badge: "Popular",
+
+        description:
+            "Soft and chewy cookies loaded with premium chocolate chips. Every bite combines a buttery texture with rich chocolate flavor, making this one of our most loved classics."
+
+    },
+
+
+    redvelvet: {
+
+        name: "Red Velvet",
+
+        price: 450,
+
+        image: "redvelvet cookie.jpg",
+
+        rating: "4.8 / 5",
+
+        badge: "Special",
+
+        description:
+            "Rich and soft red velvet cookies filled with creamy white chocolate chunks. A delicious combination of smooth sweetness and classic red velvet flavor."
+
+    },
+
+
+    triplechocolate: {
+
+        name: "Triple Chocolate",
+
+        price: 450,
+
+        image: "triple chocolate.jpg",
+
+        rating: "5.0 / 5",
+
+        badge: "Bestseller",
+
+        description:
+            "A chocolate lover's dream made with dark, milk and white chocolate. Rich, soft and packed with chocolate in every bite."
+
+    },
+
+
+    oatmeal: {
+
+        name: "Oatmeal Raisin",
+
+        price: 350,
+
+        image: "Oatmeal-Raisin-Cookies-.jpg",
+
+        rating: "4.7 / 5",
+
+        badge: "Classic",
+
+        description:
+            "Fresh oatmeal cookies blended with juicy raisins and a touch of cinnamon. A comforting classic with a delicious homemade taste."
+
+    },
+
+
+    peanutbutter: {
+
+        name: "Chocolate Peanut Butter",
+
+        price: 400,
+
+        image: "Chocolate-Peanut-Butter.jpg",
+
+        rating: "4.8 / 5",
+
+        badge: "New",
+
+        description:
+            "Creamy peanut butter cookies combined with rich chocolate flavor for a deliciously satisfying sweet treat."
+
+    },
+
+
+    doublechocolate: {
+
+        name: "Double Chocolate",
+
+        price: 500,
+
+        image: "double chocolate.jpg",
+
+        rating: "4.9 / 5",
+
+        badge: "Favorite",
+
+        description:
+            "Soft chocolate cookies filled with extra chocolate chips. Perfect for anyone who loves an intense chocolate experience."
+
+    }
+
+};
+
+
+
+/* =====================================================
+                GET COOKIE FROM URL
+===================================================== */
+
+let params =
+    new URLSearchParams(window.location.search);
+
+let cookieType =
+    params.get("cookie");
+
+
+let selectedCookie =
+    cookieData[cookieType] || cookieData.chocolatechip;
+
+
+
+/* =====================================================
+                LOAD COOKIE DETAILS
+===================================================== */
+
+document.getElementById("cookieName").textContent =
+    selectedCookie.name;
+
+
+document.getElementById("cookieImage").src =
+    selectedCookie.image;
+
+
+document.getElementById("cookieImage").alt =
+    selectedCookie.name;
+
+
+document.getElementById("cookiePrice").textContent =
+    "Rs. " + selectedCookie.price;
+
+
+document.getElementById("cookieRating").textContent =
+    selectedCookie.rating;
+
+
+document.getElementById("cookieBadge").textContent =
+    selectedCookie.badge;
+
+
+document.getElementById("cookieDescription").textContent =
+    selectedCookie.description;
+
+
+
+/* =====================================================
+                QUANTITY
+===================================================== */
+
+let quantity = 1;
+
+
+function increaseQuantity() {
+
+    quantity++;
+
+    document.getElementById("quantity").textContent =
+        quantity;
+
+    updateTotal();
+
+}
+
+
+function decreaseQuantity() {
+
+    if (quantity > 1) {
+
+        quantity--;
+
+    }
+
+    document.getElementById("quantity").textContent =
+        quantity;
+
+    updateTotal();
+
+}
+
+
+function updateTotal() {
+
+    let total =
+        selectedCookie.price * quantity;
+
+    document.getElementById("totalPrice").textContent =
+        "Rs. " + total;
+
+}
+
+
+
+/* =====================================================
+                ADD TO CART
+===================================================== */
+
+function addToCart() {
+
+    let cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
+
+
+    let existingItem =
+        cart.find(function(item) {
+
+            return item.name === selectedCookie.name;
+
+        });
+
+
+    if (existingItem) {
+
+        existingItem.quantity += quantity;
+
+    }
+    else {
+
+        cart.push({
+
+            name: selectedCookie.name,
+
+            price: selectedCookie.price,
+
+            image: selectedCookie.image,
+
+            quantity: quantity
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+
+    showCartMessage();
+
+}
+
+
+
+/* =====================================================
+                SUCCESS MESSAGE
+===================================================== */
+
+function showCartMessage() {
+
+    let message =
+        document.createElement("div");
+
+    message.className =
+        "cart-success-message";
+
+
+    message.innerHTML = `
+
+        <div class="cart-success-icon">
+            ✓
+        </div>
+
+        <div>
+
+            <strong>
+                Added to Cart
+            </strong>
+
+            <span>
+                ${selectedCookie.name}
+                × ${quantity}
+            </span>
+
+        </div>
+
+        <a href="cart.html">
+            View Cart
+        </a>
+
+    `;
+
+
+    document.body.appendChild(message);
+
+
+    setTimeout(function() {
+
+        message.classList.add("show");
+
+    }, 50);
+
+
+    setTimeout(function() {
+
+        message.classList.remove("show");
+
+        setTimeout(function() {
+
+            message.remove();
+
+        }, 400);
+
+    }, 4000);
+
+}
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,2744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | SweetCrust Cookies</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Main Website CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Checkout CSS -->
+    <link rel="stylesheet" href="checkout.css">
+
+</head>
+
+
+<body>
+
+
+<!--=====================================================
+                        NAVBAR
+===================================================== -->
+
+<nav class="navbar navbar-expand-lg checkout-navbar">
+
+    <div class="container">
+
+        <a class="navbar-brand sweet-logo" href="index.html">
+
+            <i class="fa-solid fa-cookie-bite"></i>
+
+            SweetCrust
+
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <div
+            class="collapse navbar-collapse"
+            id="mainNavbar"
+        >
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="cookies.html">
+                        Cookies
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html">
+                        Register
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="track.html">
+                        Track Order
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="cancel.html">
+                        Cancel Order
+                    </a>
+                </li>
+
+                <li class="nav-item ms-lg-3">
+
+                    <a
+                        href="checkout.html"
+                        class="cart-button"
+                    >
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                        Cart
+
+                        <span id="cartCount">0</span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+                    CHECKOUT HERO
+===================================================== -->
+
+<section class="checkout-hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <span class="small-title">
+
+                <i class="fa-solid fa-lock"></i>
+
+                SECURE CHECKOUT
+
+            </span>
+
+
+            <h1>
+
+                Complete Your
+                <span>Order</span>
+
+            </h1>
+
+
+            <p>
+
+                Just a few steps away from enjoying
+                freshly baked SweetCrust cookies.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                  CHECKOUT PROGRESS
+===================================================== -->
+
+<div class="container progress-wrapper">
+
+    <div class="checkout-progress">
+
+        <div class="progress-line"></div>
+
+
+        <div class="progress-step active">
+
+            <div class="step-circle">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <span>Information</span>
+
+        </div>
+
+
+        <div class="progress-step">
+
+            <div class="step-circle">
+
+                <i class="fa-solid fa-truck"></i>
+
+            </div>
+
+            <span>Delivery</span>
+
+        </div>
+
+
+        <div class="progress-step">
+
+            <div class="step-circle">
+
+                <i class="fa-solid fa-credit-card"></i>
+
+            </div>
+
+            <span>Payment</span>
+
+        </div>
+
+
+        <div class="progress-step">
+
+            <div class="step-circle">
+
+                <i class="fa-solid fa-check"></i>
+
+            </div>
+
+            <span>Complete</span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+                    MAIN CHECKOUT
+===================================================== -->
+
+<section class="checkout-area">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+
+            <!-- =================================================
+                            LEFT SIDE
+            ================================================= -->
+
+            <div class="col-lg-7">
+
+
+                <!-- CUSTOMER INFORMATION -->
+
+                <div class="checkout-card animate-card">
+
+                    <div class="section-heading">
+
+                        <div class="heading-icon">
+
+                            <i class="fa-solid fa-user"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Customer Information
+                            </h3>
+
+                            <p>
+                                Enter your contact details.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="row g-3">
+
+
+                        <!-- NAME -->
+
+                        <div class="col-md-6">
+
+                            <div class="floating-group">
+
+                                <input
+                                    type="text"
+                                    id="customerName"
+                                    placeholder=" "
+                                    autocomplete="name"
+                                >
+
+                                <label>
+
+                                    <i class="fa-solid fa-user"></i>
+
+                                    Full Name
+
+                                </label>
+
+                            </div>
+
+
+                            <small
+                                class="error-message"
+                                id="nameError"
+                            ></small>
+
+                        </div>
+
+
+
+                        <!-- PHONE -->
+
+                        <div class="col-md-6">
+
+                            <div class="floating-group">
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    placeholder=" "
+                                    autocomplete="tel"
+                                >
+
+                                <label>
+
+                                    <i class="fa-solid fa-phone"></i>
+
+                                    Phone Number
+
+                                </label>
+
+                            </div>
+
+
+                            <small
+                                class="input-hint"
+                            >
+                                Example: +92 300 1234567
+                            </small>
+
+
+                            <small
+                                class="error-message"
+                                id="phoneError"
+                            ></small>
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+
+                        <div class="col-12">
+
+                            <div class="floating-group">
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder=" "
+                                    autocomplete="email"
+                                >
+
+                                <label>
+
+                                    <i class="fa-solid fa-envelope"></i>
+
+                                    Email Address
+
+                                </label>
+
+                            </div>
+
+
+                            <small
+                                class="error-message"
+                                id="emailError"
+                            ></small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                            DELIVERY DETAILS
+                ================================================= -->
+
+                <div class="checkout-card animate-card">
+
+                    <div class="section-heading">
+
+                        <div class="heading-icon">
+
+                            <i class="fa-solid fa-truck-fast"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Delivery Details
+                            </h3>
+
+                            <p>
+                                Where should we deliver your cookies?
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="row g-3">
+
+
+                        <!-- CITY -->
+
+                        <div class="col-md-6">
+
+                            <div class="floating-group">
+
+                                <select id="city">
+
+                                    <option value="">
+                                        Select City
+                                    </option>
+
+                                    <option value="Karachi">
+                                        Karachi
+                                    </option>
+
+                                    <option value="Lahore">
+                                        Lahore
+                                    </option>
+
+                                    <option value="Islamabad">
+                                        Islamabad
+                                    </option>
+
+                                    <option value="Rawalpindi">
+                                        Rawalpindi
+                                    </option>
+
+                                    <option value="Faisalabad">
+                                        Faisalabad
+                                    </option>
+
+                                </select>
+
+
+                                <label class="select-label">
+
+                                    <i class="fa-solid fa-city"></i>
+
+                                    City
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- AREA -->
+
+                        <div class="col-md-6">
+
+                            <div class="floating-group">
+
+                                <input
+                                    type="text"
+                                    id="area"
+                                    placeholder=" "
+                                >
+
+                                <label>
+
+                                    <i class="fa-solid fa-location-dot"></i>
+
+                                    Area
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ADDRESS -->
+
+                        <div class="col-12">
+
+                            <div class="floating-group">
+
+                                <textarea
+                                    id="address"
+                                    placeholder=" "
+                                    rows="4"
+                                ></textarea>
+
+                                <label>
+
+                                    <i class="fa-solid fa-house"></i>
+
+                                    Complete Address
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- DATE -->
+
+                        <div class="col-md-6">
+
+                            <div class="floating-group">
+
+                                <input
+                                    type="date"
+                                    id="deliveryDate"
+                                >
+
+                                <label class="date-label">
+
+                                    <i class="fa-solid fa-calendar"></i>
+
+                                    Delivery Date
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- INSTRUCTIONS -->
+
+                        <div class="col-md-6">
+
+                            <div class="floating-group">
+
+                                <input
+                                    type="text"
+                                    id="instructions"
+                                    placeholder=" "
+                                >
+
+                                <label>
+
+                                    <i class="fa-solid fa-note-sticky"></i>
+
+                                    Delivery Instructions
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                PAYMENT METHOD
+================================================= -->
+<div class="checkout-card animate-card">
+
+    <div class="section-heading">
+
+        <div class="heading-icon">
+            <i class="fa-solid fa-wallet"></i>
+        </div>
+
+        <div>
+            <h3>Payment Method</h3>
+
+            <p>
+                Select your preferred payment method.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="payment-grid">
+
+        <!-- CASH ON DELIVERY -->
+        <label class="payment-card active">
+
+            <input
+                type="radio"
+                name="payment"
+                value="Cash on Delivery"
+                checked
+            >
+
+            <div class="payment-icon">
+                <i class="fa-solid fa-money-bill-wave"></i>
+            </div>
+
+            <div class="payment-text">
+
+                <h5>Cash on Delivery</h5>
+
+                <p>
+                    Pay when your order arrives.
+                </p>
+
+            </div>
+
+            <div class="selected-check">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+        </label>
+
+
+        <!-- BANK TRANSFER -->
+        <label class="payment-card">
+
+            <input
+                type="radio"
+                name="payment"
+                value="Bank Transfer"
+            >
+
+            <div class="payment-icon">
+                <i class="fa-solid fa-building-columns"></i>
+            </div>
+
+            <div class="payment-text">
+
+                <h5>Bank Transfer</h5>
+
+                <p>
+                    Transfer payment before delivery.
+                </p>
+
+            </div>
+
+            <div class="selected-check">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+        </label>
+
+    </div>
+
+
+    <!-- ==========================================
+              BANK TRANSFER INFORMATION
+    =========================================== -->
+
+    <div
+        class="bank-transfer-details"
+        id="bankTransferDetails"
+    >
+
+        <div class="bank-details-header">
+
+            <div class="bank-details-icon">
+                <i class="fa-solid fa-building-columns"></i>
+            </div>
+
+            <div>
+
+                <h4>Bank Transfer Details</h4>
+
+                <p>
+                    Please transfer the exact order amount
+                    to the account below.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="bank-info-box">
+
+            <div class="bank-info-row">
+
+                <span>Bank</span>
+
+                <strong>
+                    Meezan Bank
+                </strong>
+
+            </div>
+
+
+            <div class="bank-info-row">
+
+                <span>Account Title</span>
+
+                <strong>
+                    SweetCrust Cookies
+                </strong>
+
+            </div>
+
+
+            <div class="bank-info-row">
+
+                <span>Account Number</span>
+
+                <strong>
+                    09877766544892
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- PAYMENT NOTE -->
+
+        <div class="payment-note">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <div>
+
+                <strong>
+                    Important
+                </strong>
+
+                <p>
+                    After completing the bank transfer,
+                    please send a screenshot of your payment
+                    receipt to our WhatsApp for confirmation.
+                </p>
+
+                <span>
+                    Your order will be processed after
+                    payment verification.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- WHATSAPP BUTTON -->
+
+        <a
+            href="https://wa.me/923001234567"
+            target="_blank"
+            class="payment-whatsapp-btn"
+        >
+
+            <i class="fa-brands fa-whatsapp"></i>
+
+            Send Payment Screenshot
+
+        </a>
+
+    </div>
+
+</div>
+
+<!-- =================================================
+                BILLING ADDRESS
+================================================= -->
+
+<div class="checkout-card animate-card">
+
+    <div class="section-heading">
+
+        <div class="heading-icon">
+            <i class="fa-solid fa-file-invoice"></i>
+        </div>
+
+        <div>
+
+            <h3>Billing Address</h3>
+
+            <p>
+                Select your billing address.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="billing-options">
+
+        <!-- SAME ADDRESS -->
+
+        <label class="billing-option active">
+
+            <input
+                type="radio"
+                name="billingAddress"
+                value="same"
+                checked
+            >
+
+            <div class="billing-radio">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <div>
+
+                <strong>
+                    Same as shipping address
+                </strong>
+
+                <span>
+                    Use the delivery address for billing.
+                </span>
+
+            </div>
+
+        </label>
+
+
+        <!-- DIFFERENT ADDRESS -->
+
+        <label class="billing-option">
+
+            <input
+                type="radio"
+                name="billingAddress"
+                value="different"
+            >
+
+            <div class="billing-radio">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <div>
+
+                <strong>
+                    Use a different billing address
+                </strong>
+
+                <span>
+                    Enter a separate billing address.
+                </span>
+
+            </div>
+
+        </label>
+
+    </div>
+
+
+    <!-- DIFFERENT BILLING ADDRESS -->
+
+    <div
+        class="different-billing-address"
+        id="differentBillingAddress"
+    >
+
+        <div class="row g-3">
+
+            <!-- BILLING NAME -->
+
+            <div class="col-md-6">
+
+                <div class="floating-group">
+
+                    <input
+                        type="text"
+                        id="billingName"
+                        placeholder=" "
+                    >
+
+                    <label>
+
+                        <i class="fa-solid fa-user"></i>
+
+                        Billing Name
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- BILLING PHONE -->
+
+            <div class="col-md-6">
+
+                <div class="floating-group">
+
+                    <input
+                        type="tel"
+                        id="billingPhone"
+                        placeholder=" "
+                    >
+
+                    <label>
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        Billing Phone
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- BILLING CITY -->
+
+            <div class="col-md-6">
+
+                <div class="floating-group">
+
+                    <select id="billingCity">
+
+                        <option value="">
+                            Select City
+                        </option>
+
+                        <option value="Karachi">
+                            Karachi
+                        </option>
+
+                        <option value="Lahore">
+                            Lahore
+                        </option>
+
+                        <option value="Islamabad">
+                            Islamabad
+                        </option>
+
+                        <option value="Rawalpindi">
+                            Rawalpindi
+                        </option>
+
+                        <option value="Faisalabad">
+                            Faisalabad
+                        </option>
+
+                    </select>
+
+                    <label class="select-label">
+
+                        <i class="fa-solid fa-city"></i>
+
+                        Billing City
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- BILLING AREA -->
+
+            <div class="col-md-6">
+
+                <div class="floating-group">
+
+                    <input
+                        type="text"
+                        id="billingArea"
+                        placeholder=" "
+                    >
+
+                    <label>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        Billing Area
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- BILLING ADDRESS -->
+
+            <div class="col-12">
+
+                <div class="floating-group">
+
+                    <textarea
+                        id="billingAddress"
+                        placeholder=" "
+                        rows="3"
+                    ></textarea>
+
+                    <label>
+
+                        <i class="fa-solid fa-house"></i>
+
+                        Complete Billing Address
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+                <!-- TERMS -->
+
+                <div class="checkout-card terms-card">
+
+                    <label class="custom-checkbox">
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                        >
+
+                        <span class="checkmark">
+
+                            <i class="fa-solid fa-check"></i>
+
+                        </span>
+
+
+                        <span class="terms-text">
+
+                            I confirm that all the information
+                            provided above is correct and I agree
+                            to the SweetCrust Cookies order policy.
+
+                        </span>
+
+                    </label>
+
+
+                    <small
+                        class="error-message"
+                        id="termsError"
+                    ></small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                            RIGHT SIDE
+            ================================================= -->
+
+            <div class="col-lg-5">
+
+                <div class="summary-sticky">
+
+
+                    <!-- ORDER SUMMARY -->
+
+                    <div class="order-summary-card">
+
+
+                        <div class="summary-title">
+
+                            <div>
+
+                                <span>
+                                    YOUR ORDER
+                                </span>
+
+                                <h3>
+                                    Order Summary
+                                </h3>
+
+                            </div>
+
+
+                            <div class="summary-bag">
+
+                                <i class="fa-solid fa-bag-shopping"></i>
+
+                                <span id="summaryItems">
+                                    0
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- CART -->
+
+                        <div
+                            id="checkoutItems"
+                            class="checkout-items"
+                        >
+
+                            <div class="empty-cart">
+
+                                <div class="empty-icon">
+
+                                    <i class="fa-solid fa-cookie-bite"></i>
+
+                                </div>
+
+
+                                <h4>
+                                    Your cart is empty
+                                </h4>
+
+
+                                <p>
+                                    Add some delicious cookies
+                                    before checking out.
+                                </p>
+
+
+                                <a href="cookies.html">
+
+                                    Browse Cookies
+
+                                    <i class="fa-solid fa-arrow-right"></i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- DELIVERY PROGRESS -->
+
+                        <div class="delivery-progress">
+
+                            <div class="delivery-progress-header">
+
+                                <i class="fa-solid fa-truck-fast"></i>
+
+                                <span id="deliveryMessage">
+                                    Add cookies for FREE delivery!
+                                </span>
+
+                            </div>
+
+
+                            <div class="progress">
+
+                                <div
+                                    class="progress-bar"
+                                    id="deliveryBar"
+                                    style="width: 0%"
+                                ></div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- COUPON -->
+
+                        <div class="coupon-box">
+
+    <div class="coupon-offer">
+        <div class="coupon-offer-icon">
+            <i class="fa-solid fa-tag"></i>
+        </div>
+
+        <div>
+            <strong>Get 10% OFF!</strong>
+            <span>Use coupon code <b>SWEET10</b> at checkout.</span>
+        </div>
+    </div>
+
+    <div class="coupon-input">
+        <i class="fa-solid fa-ticket"></i>
+
+        <input
+            type="text"
+            id="couponCode"
+            placeholder="Enter coupon code"
+        >
+
+        <button
+            type="button"
+            onclick="applyCoupon()"
+        >
+            Apply
+        </button>
+    </div>
+
+    <small id="couponMessage"></small>
+
+</div>
+
+
+                        <!-- PRICE -->
+
+                        <div class="price-details">
+
+
+                            <div class="price-row">
+
+                                <span>
+                                    Subtotal
+                                </span>
+
+                                <strong id="subtotal">
+                                    Rs. 0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="price-row">
+
+                                <span>
+                                    Discount
+                                </span>
+
+                                <strong
+                                    id="discount"
+                                    class="discount"
+                                >
+                                    - Rs. 0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="price-row">
+
+                                <span>
+                                    Delivery
+                                </span>
+
+                                <strong id="deliveryCharges">
+                                    Rs. 0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="grand-total">
+
+                                <span>
+                                    Total
+                                </span>
+
+                                <strong id="grandTotal">
+                                    Rs. 0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- PLACE ORDER -->
+
+                        <button
+                            class="place-order-btn"
+                            id="placeOrderBtn"
+                            onclick="placeOrder()"
+                        >
+
+                            <span class="button-content">
+
+                                <i class="fa-solid fa-lock"></i>
+
+                                Place Order
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </span>
+
+
+                            <span class="button-loading">
+
+                                <span
+                                    class="spinner-border spinner-border-sm"
+                                ></span>
+
+                                Processing...
+
+                            </span>
+
+                        </button>
+
+
+                        <div class="secure-text">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            Secure & protected checkout
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- TRUST FEATURES -->
+
+                    <div class="trust-card">
+
+
+                        <div class="trust-item">
+
+                            <div class="trust-icon">
+
+                                <i class="fa-solid fa-cookie-bite"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Freshly Baked
+                                </strong>
+
+                                <span>
+                                    Made with quality ingredients
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="trust-item">
+
+                            <div class="trust-icon">
+
+                                <i class="fa-solid fa-truck-fast"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Fast Delivery
+                                </strong>
+
+                                <span>
+                                    Carefully packed & delivered
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="trust-item">
+
+                            <div class="trust-icon">
+
+                                <i class="fa-solid fa-headset"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Customer Support
+                                </strong>
+
+                                <span>
+                                    We're here to help
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+                         TOAST
+===================================================== -->
+
+<div
+    class="toast-container position-fixed bottom-0 end-0 p-4"
+>
+
+    <div
+        id="checkoutToast"
+        class="toast"
+        role="alert"
+    >
+
+        <div class="toast-header">
+
+            <i class="fa-solid fa-circle-check toast-icon"></i>
+
+            <strong class="me-auto">
+                SweetCrust
+            </strong>
+
+            <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="toast"
+            ></button>
+
+        </div>
+
+
+        <div
+            class="toast-body"
+            id="toastMessage"
+        >
+            Success!
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+                    SUCCESS MODAL
+===================================================== -->
+
+<div
+    class="success-overlay"
+    id="successModal"
+>
+
+    <div class="success-modal">
+
+        <div class="success-animation">
+
+            <div class="success-circle">
+
+                <i class="fa-solid fa-check"></i>
+
+            </div>
+
+        </div>
+
+
+        <span class="success-label">
+            ORDER SUCCESSFUL
+        </span>
+
+
+        <h2>
+            Thank You!
+        </h2>
+
+
+        <p>
+            Your delicious SweetCrust order has been
+            successfully placed.
+        </p>
+
+
+        <div class="order-id-box">
+
+            <span>
+                ORDER ID
+            </span>
+
+            <strong id="generatedOrderId">
+                SC-000000
+            </strong>
+
+        </div>
+
+
+        <p class="track-note">
+
+            Save your Order ID to track your order.
+
+        </p>
+
+
+        <div class="success-actions">
+
+            <a href="track.html">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Track Order
+
+            </a>
+
+
+            <a href="index.html">
+
+                Continue Shopping
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+                         FOOTER
+===================================================== -->
+
+<footer class="checkout-footer">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <h4>
+
+                    <i class="fa-solid fa-cookie-bite"></i>
+
+                    SweetCrust
+
+                </h4>
+
+                <p>
+                    Freshly baked happiness, delivered to you.
+                </p>
+
+            </div>
+
+
+            <div class="col-md-6 text-md-end">
+
+                <p>
+                    © 2026 SweetCrust Cookies.
+                    All Rights Reserved.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+></script>
+
+
+
+<script>
+
+/* =====================================================
+                    CART
+===================================================== */
+
+let cart =
+    JSON.parse(
+        localStorage.getItem("cart")
+    ) || [];
+
+
+let discountAmount = 0;
+
+
+const FREE_DELIVERY_LIMIT = 3000;
+
+const DELIVERY_CHARGE = 200;
+
+
+
+/* =====================================================
+                    ELEMENTS
+===================================================== */
+
+const checkoutItems =
+    document.getElementById(
+        "checkoutItems"
+    );
+
+const subtotalElement =
+    document.getElementById(
+        "subtotal"
+    );
+
+const discountElement =
+    document.getElementById(
+        "discount"
+    );
+
+const deliveryElement =
+    document.getElementById(
+        "deliveryCharges"
+    );
+
+const totalElement =
+    document.getElementById(
+        "grandTotal"
+    );
+
+const cartCount =
+    document.getElementById(
+        "cartCount"
+    );
+
+const summaryItems =
+    document.getElementById(
+        "summaryItems"
+    );
+
+
+
+/* =====================================================
+                 DISPLAY CART
+===================================================== */
+
+function displayCart() {
+
+    checkoutItems.innerHTML = "";
+
+    let subtotal = 0;
+
+    let quantity = 0;
+
+
+    if (cart.length === 0) {
+
+        checkoutItems.innerHTML = `
+
+            <div class="empty-cart">
+
+                <div class="empty-icon">
+
+                    <i class="fa-solid fa-cookie-bite"></i>
+
+                </div>
+
+                <h4>
+                    Your cart is empty
+                </h4>
+
+                <p>
+                    Add some delicious cookies
+                    before checking out.
+                </p>
+
+                <a href="cookies.html">
+
+                    Browse Cookies
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        `;
+
+
+        cartCount.innerText = "0";
+
+        summaryItems.innerText = "0";
+
+        updateTotals();
+
+        return;
+
+    }
+
+
+
+    cart.forEach(
+        (item, index) => {
+
+            const price =
+                Number(item.price) || 0;
+
+            const itemQuantity =
+                Number(item.quantity) || 1;
+
+            const itemTotal =
+                price * itemQuantity;
+
+
+            subtotal += itemTotal;
+
+            quantity += itemQuantity;
+
+
+
+            checkoutItems.innerHTML += `
+
+                <div
+                    class="checkout-product"
+                    id="product-${index}"
+                >
+
+                    <div class="product-image-wrapper">
+
+                        <img
+                            src="${item.image}"
+                            alt="${item.name}"
+                        >
+
+                        <span>
+                            ${itemQuantity}
+                        </span>
+
+                    </div>
+
+
+                    <div class="product-details">
+
+                        <h5>
+                            ${item.name}
+                        </h5>
+
+                        <p>
+                            Rs.
+                            ${price.toLocaleString()}
+                            each
+                        </p>
+
+                    </div>
+
+
+                    <div class="product-price">
+
+                        <strong>
+                            Rs.
+                            ${itemTotal.toLocaleString()}
+                        </strong>
+
+
+                        <button
+                            onclick="removeItem(${index})"
+                            title="Remove"
+                        >
+
+                            <i class="fa-solid fa-trash-can"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+
+
+    cartCount.innerText =
+        quantity;
+
+    summaryItems.innerText =
+        quantity;
+
+
+    updateTotals();
+
+}
+
+
+
+/* =====================================================
+                 UPDATE TOTALS
+===================================================== */
+
+function updateTotals() {
+
+    let subtotal = 0;
+
+
+    cart.forEach(
+        item => {
+
+            subtotal +=
+                (Number(item.price) || 0) *
+                (Number(item.quantity) || 1);
+
+        }
+    );
+
+
+    let delivery = 0;
+
+
+    if (subtotal > 0) {
+
+        delivery =
+            subtotal >= FREE_DELIVERY_LIMIT
+            ? 0
+            : DELIVERY_CHARGE;
+
+    }
+
+
+    let total =
+        subtotal -
+        discountAmount +
+        delivery;
+
+
+    if (total < 0) {
+
+        total = 0;
+
+    }
+
+
+    subtotalElement.innerText =
+        "Rs. " +
+        subtotal.toLocaleString();
+
+
+    discountElement.innerText =
+        "- Rs. " +
+        discountAmount.toLocaleString();
+
+
+    deliveryElement.innerText =
+        delivery === 0 && subtotal > 0
+        ? "FREE"
+        : "Rs. " +
+          delivery.toLocaleString();
+
+
+    totalElement.innerText =
+        "Rs. " +
+        total.toLocaleString();
+
+
+    updateDeliveryProgress(
+        subtotal
+    );
+
+}
+
+
+
+/* =====================================================
+              DELIVERY PROGRESS
+===================================================== */
+
+function updateDeliveryProgress(
+    subtotal
+) {
+
+    const bar =
+        document.getElementById(
+            "deliveryBar"
+        );
+
+
+    const message =
+        document.getElementById(
+            "deliveryMessage"
+        );
+
+
+    if (subtotal === 0) {
+
+        bar.style.width = "0%";
+
+        message.innerText =
+            "Add cookies for FREE delivery!";
+
+        return;
+
+    }
+
+
+    if (
+        subtotal >=
+        FREE_DELIVERY_LIMIT
+    ) {
+
+        bar.style.width =
+            "100%";
+
+
+        message.innerHTML = `
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            Congratulations!
+            You get FREE delivery.
+
+        `;
+
+        return;
+
+    }
+
+
+    const percentage =
+        (
+            subtotal /
+            FREE_DELIVERY_LIMIT
+        ) * 100;
+
+
+    bar.style.width =
+        percentage + "%";
+
+
+    const remaining =
+        FREE_DELIVERY_LIMIT -
+        subtotal;
+
+
+    message.innerText =
+        "Add Rs. " +
+        remaining.toLocaleString() +
+        " more for FREE delivery!";
+
+}
+
+
+
+/* =====================================================
+                    REMOVE ITEM
+===================================================== */
+
+function removeItem(index) {
+
+    const product =
+        document.getElementById(
+            "product-" + index
+        );
+
+
+    if (product) {
+
+        product.classList.add(
+            "remove-animation"
+        );
+
+    }
+
+
+    setTimeout(
+        () => {
+
+            cart.splice(
+                index,
+                1
+            );
+
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+
+
+            displayCart();
+
+
+            showToast(
+                "Item removed from your cart."
+            );
+
+        },
+        350
+    );
+
+}
+
+
+
+/* =====================================================
+                      COUPON
+===================================================== */
+
+function applyCoupon() {
+
+    const input = document.getElementById("couponCode");
+
+    const code = input.value.trim().toUpperCase();
+
+    let subtotal = 0;
+
+    cart.forEach(item => {
+        subtotal +=
+            (Number(item.price) || 0) *
+            (Number(item.quantity) || 1);
+    });
+
+    // Empty coupon
+    if (code === "") {
+
+        discountAmount = 0;
+
+        showCouponMessage(
+            "Please enter a coupon code.",
+            false
+        );
+
+        updateTotals();
+        return;
+    }
+
+    // SWEET10 Coupon
+    if (code === "SWEET10") {
+
+        // 10% discount
+        discountAmount = Math.round(subtotal * 0.10);
+
+        showCouponMessage(
+            "SWEET10 applied! You saved 10%.",
+            true
+        );
+
+        showToast(
+            "🎉 SWEET10 applied! You saved 10%."
+        );
+
+        updateTotals();
+
+        return;
+    }
+
+    // Invalid coupon
+    discountAmount = 0;
+
+    showCouponMessage(
+        "Invalid coupon code. Try SWEET10.",
+        false
+    );
+
+    updateTotals();
+}
+
+
+/* =====================================================
+                COUPON MESSAGE
+===================================================== */
+
+function showCouponMessage(
+    message,
+    success
+) {
+
+    const element =
+        document.getElementById(
+            "couponMessage"
+        );
+
+
+    element.innerText =
+        message;
+
+
+    element.className =
+        success
+        ? "coupon-success"
+        : "coupon-error";
+
+}
+
+
+
+/* =====================================================
+            PAYMENT CARDS
+===================================================== */
+
+const paymentCards =
+    document.querySelectorAll(".payment-card");
+
+const bankTransferDetails =
+    document.getElementById("bankTransferDetails");
+
+
+paymentCards.forEach(card => {
+
+    card.addEventListener("click", function () {
+
+        // Remove active from all
+        paymentCards.forEach(item => {
+            item.classList.remove("active");
+        });
+
+        // Add active to selected
+        this.classList.add("active");
+
+
+        // Get selected payment
+        const selectedPayment =
+            this.querySelector('input[name="payment"]').value;
+
+
+        // Show / hide bank details
+
+        if (selectedPayment === "Bank Transfer") {
+
+            bankTransferDetails.classList.add("show");
+
+        } else {
+
+            bankTransferDetails.classList.remove("show");
+
+        }
+
+    });
+
+});
+
+/* =====================================================
+            BILLING ADDRESS
+===================================================== */
+
+const billingOptions =
+    document.querySelectorAll(
+        'input[name="billingAddress"]'
+    );
+
+const differentBillingAddress =
+    document.getElementById(
+        "differentBillingAddress"
+    );
+
+
+billingOptions.forEach(option => {
+
+    option.addEventListener("change", function () {
+
+        document
+            .querySelectorAll(".billing-option")
+            .forEach(item => {
+
+                item.classList.remove("active");
+
+            });
+
+
+        this.closest(".billing-option")
+            .classList.add("active");
+
+
+        if (this.value === "different") {
+
+            differentBillingAddress
+                .classList.add("show");
+
+        } else {
+
+            differentBillingAddress
+                .classList.remove("show");
+
+        }
+
+    });
+
+});
+
+/* =====================================================
+                PHONE VALIDATION
+===================================================== */
+
+function validPakistaniPhone(phone) {
+
+    phone = phone.trim();
+
+    /*
+        Accepted formats:
+
+        03001234567
+        03121234567
+        03211234567
+        03331234567
+        03451234567
+        03551234567
+
+        OR
+
+        +923001234567
+        +923121234567
+        +923321234567
+
+        Also accepts spaces and hyphens:
+        0300-1234567
+        0300 1234567
+        +92 300 1234567
+    */
+
+    phone = phone.replace(/[\s-]/g, "");
+
+
+    const localFormat =
+        /^03[0-9]{9}$/;
+
+
+    const internationalFormat =
+        /^\+923[0-9]{9}$/;
+
+
+    return (
+        localFormat.test(phone) ||
+        internationalFormat.test(phone)
+    );
+
+}
+
+
+
+/* =====================================================
+                  FORM VALIDATION
+===================================================== */
+
+function validateForm() {
+
+    let valid = true;
+
+
+    const name =
+        document
+            .getElementById(
+                "customerName"
+            )
+            .value
+            .trim();
+
+
+    const phone =
+        document
+            .getElementById(
+                "phone"
+            )
+            .value
+            .trim();
+
+
+    const email =
+        document
+            .getElementById(
+                "email"
+            )
+            .value
+            .trim();
+
+
+    const city =
+        document
+            .getElementById(
+                "city"
+            )
+            .value;
+
+
+    const area =
+        document
+            .getElementById(
+                "area"
+            )
+            .value
+            .trim();
+
+
+    const address =
+        document
+            .getElementById(
+                "address"
+            )
+            .value
+            .trim();
+
+
+    const terms =
+        document
+            .getElementById(
+                "terms"
+            )
+            .checked;
+
+
+
+    /* CLEAR OLD ERRORS */
+
+    document
+        .querySelectorAll(
+            ".error-message"
+        )
+        .forEach(
+            element => {
+
+                element.innerText =
+                    "";
+
+            }
+        );
+
+
+
+    /* NAME */
+
+    if (name === "") {
+
+        document.getElementById(
+            "nameError"
+        ).innerText =
+            "Please enter your full name.";
+
+        valid = false;
+
+    }
+
+
+
+    /* PHONE */
+
+    if (
+        !validPakistaniPhone(phone)
+        )
+    {
+
+        document.getElementById(
+            "phoneError"
+        ).innerText =
+            "Enter a valid Pakistani phone number.";
+
+        valid = false;
+
+    }
+
+
+
+    /* EMAIL */
+
+    const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+    if (
+        !emailPattern.test(
+            email
+        )
+    ) {
+
+        document.getElementById(
+            "emailError"
+        ).innerText =
+            "Enter a valid email address.";
+
+        valid = false;
+
+    }
+
+
+
+    /* DELIVERY */
+
+    if (
+        city === "" ||
+        area === "" ||
+        address === ""
+    ) {
+
+        showToast(
+            "Please complete your delivery information."
+        );
+
+        valid = false;
+
+    }
+
+
+
+    /* TERMS */
+
+    if (!terms) {
+
+        document.getElementById(
+            "termsError"
+        ).innerText =
+            "Please accept the order policy.";
+
+        valid = false;
+
+    }
+
+
+    return valid;
+
+}
+
+
+
+/* =====================================================
+                   PLACE ORDER
+===================================================== */
+
+function placeOrder() {
+
+    if (cart.length === 0) {
+
+        showToast(
+            "Your cart is empty. Add cookies first."
+        );
+
+        return;
+
+    }
+
+
+    if (!validateForm()) {
+
+        const firstError =
+            document.querySelector(
+                ".error-message:not(:empty)"
+            );
+
+
+        if (firstError) {
+
+            firstError
+                .scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+        }
+
+
+        return;
+
+    }
+
+
+    const button =
+        document.getElementById(
+            "placeOrderBtn"
+        );
+
+
+    button.classList.add(
+        "loading"
+    );
+
+
+    button.disabled = true;
+
+
+    setTimeout(
+        generateOrder,
+        1500
+    );
+
+}
+
+
+
+/* =====================================================
+                   GENERATE ORDER
+===================================================== */
+
+function generateOrder() {
+
+    const orderId =
+        "SC-" +
+        Math.floor(
+            100000 +
+            Math.random() *
+            900000
+        );
+
+
+    const payment =
+        document.querySelector(
+            'input[name="payment"]:checked'
+        ).value;
+
+
+
+    const order = {
+
+        orderId: orderId,
+
+
+        customerName:
+            document
+                .getElementById(
+                    "customerName"
+                )
+                .value
+                .trim(),
+
+
+        phone:
+            document
+                .getElementById(
+                    "phone"
+                )
+                .value
+                .trim(),
+
+
+        email:
+            document
+                .getElementById(
+                    "email"
+                )
+                .value
+                .trim(),
+
+
+        city:
+            document
+                .getElementById(
+                    "city"
+                )
+                .value,
+
+
+        area:
+            document
+                .getElementById(
+                    "area"
+                )
+                .value
+                .trim(),
+
+
+        address:
+            document
+                .getElementById(
+                    "address"
+                )
+                .value
+                .trim(),
+
+
+        deliveryDate:
+            document
+                .getElementById(
+                    "deliveryDate"
+                )
+                .value,
+
+
+        instructions:
+            document
+                .getElementById(
+                    "instructions"
+                )
+                .value
+                .trim(),
+
+
+        payment: payment,
+
+
+        items: cart,
+
+
+        discount:
+            discountAmount,
+
+
+        total:
+            totalElement.innerText,
+
+
+        status:
+            "Order Confirmed",
+
+
+        createdAt:
+            new Date().toLocaleString()
+
+    };
+
+
+
+    /* SAVE LAST ORDER */
+
+    localStorage.setItem(
+        "lastOrder",
+        JSON.stringify(order)
+    );
+
+
+
+    /* SAVE ALL ORDERS */
+
+    let orders =
+        JSON.parse(
+            localStorage.getItem(
+                "orders"
+            )
+        ) || [];
+
+
+    orders.push(order);
+
+
+    localStorage.setItem(
+        "orders",
+        JSON.stringify(
+            orders
+        )
+    );
+
+
+
+    /* SHOW ORDER ID */
+
+    document.getElementById(
+        "generatedOrderId"
+    ).innerText =
+        orderId;
+
+
+
+    /* SHOW SUCCESS */
+
+    document.getElementById(
+        "successModal"
+    ).classList.add(
+        "show"
+    );
+
+
+
+    /* CLEAR CART */
+
+    localStorage.removeItem(
+        "cart"
+    );
+
+
+    cart = [];
+
+}
+
+
+
+/* =====================================================
+                       TOAST
+===================================================== */
+
+function showToast(
+    message
+) {
+
+    document.getElementById(
+        "toastMessage"
+    ).innerText =
+        message;
+
+
+    const toastElement =
+        document.getElementById(
+            "checkoutToast"
+        );
+
+
+    const toast =
+        bootstrap.Toast
+            .getOrCreateInstance(
+                toastElement,
+                {
+                    delay: 3000
+                }
+            );
+
+
+    toast.show();
+
+}
+
+
+
+/* =====================================================
+                        LOAD
+===================================================== */
+
+window.addEventListener(
+    "load",
+    function() {
+
+        displayCart();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

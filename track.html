@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Track Order | SweetCrust Cookies</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🍪 SweetCrust
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="cookies.html">Cookies</a>
+            </li>
+
+            <li>
+                <a href="register.html">Register</a>
+            </li>
+
+            <li>
+                <a href="track.html">Track Order</a>
+            </li>
+
+            <li>
+                <a href="cancel.html">Cancel Order</a>
+            </li>
+
+            <li>
+                <a href="cart.html">🛒 Cart</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= PAGE BANNER ================= -->
+
+<section class="track-banner">
+
+    <div class="track-banner-content">
+
+         <div class="track-banner-icon">
+            <i class="fa-solid fa-location-dot"></i>
+         </div>
+
+        
+
+        <h1>Track Your Order</h1>
+
+        <p>
+            Enter your Order ID to check the current status
+            of your SweetCrust order.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= TRACK ORDER ================= -->
+
+<section class="track-section">
+
+    <div class="track-container">
+
+
+        <!-- SEARCH BOX -->
+
+        <div class="track-search-box">
+
+            <div class="track-icon">
+
+                <i class="fa-solid fa-box"></i>
+
+            </div>
+
+            <h2>Where's My Order?</h2>
+
+            <p>
+                Enter the Order ID you received after placing
+                your order.
+            </p>
+
+
+            <div class="order-search">
+
+                <input
+                    type="text"
+                    id="orderIdInput"
+                    placeholder="Enter Order ID"
+                >
+
+                <button onclick="trackOrder()">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    Track Order
+
+                </button>
+
+            </div>
+
+
+            <div id="trackMessage"></div>
+
+        </div>
+
+
+
+        <!-- ================= ORDER RESULT ================= -->
+
+        <div
+            id="orderResult"
+            class="order-result"
+            style="display: none;"
+        >
+
+            <!-- ORDER INFORMATION -->
+
+            <div class="order-header">
+
+                <div>
+
+                    <span>Order ID</span>
+
+                    <h2 id="displayOrderId">
+                        -
+                    </h2>
+
+                </div>
+
+
+                <div class="order-date">
+
+                    <span>Order Date</span>
+
+                    <strong id="displayDate">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CUSTOMER DETAILS -->
+
+            <div class="customer-details">
+
+                <h3>
+                    <i class="fa-solid fa-user"></i>
+                    Customer Details
+                </h3>
+
+                <p>
+                    <strong>Name:</strong>
+                    <span id="displayName"></span>
+                </p>
+
+                <p>
+                    <strong>Phone:</strong>
+                    <span id="displayPhone"></span>
+                </p>
+
+                <p>
+                    <strong>Address:</strong>
+                    <span id="displayAddress"></span>
+                </p>
+
+            </div>
+
+
+
+            <!-- ORDER STATUS -->
+
+            <div class="status-section">
+
+                <h3>
+                    <i class="fa-solid fa-truck"></i>
+                    Order Status
+                </h3>
+
+
+                <div class="status-timeline">
+
+
+                    <!-- STEP 1 -->
+
+                    <div class="status-step active">
+
+                        <div class="status-circle">
+
+                            <i class="fa-solid fa-check"></i>
+
+                        </div>
+
+                        <div class="status-info">
+
+                            <h4>Order Placed</h4>
+
+                            <p>
+                                Your order has been successfully placed.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- STEP 2 -->
+
+                    <div class="status-step active">
+
+                        <div class="status-circle">
+
+                            <i class="fa-solid fa-check"></i>
+
+                        </div>
+
+                        <div class="status-info">
+
+                            <h4>Processing</h4>
+
+                            <p>
+                                Your cookies are being prepared.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- STEP 3 -->
+
+                    <div class="status-step">
+
+                        <div class="status-circle">
+
+                            <i class="fa-solid fa-truck"></i>
+
+                        </div>
+
+                        <div class="status-info">
+
+                            <h4>Out for Delivery</h4>
+
+                            <p>
+                                Your order is on its way.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- STEP 4 -->
+
+                    <div class="status-step">
+
+                        <div class="status-circle">
+
+                            <i class="fa-solid fa-house"></i>
+
+                        </div>
+
+                        <div class="status-info">
+
+                            <h4>Delivered</h4>
+
+                            <p>
+                                Your order has been delivered.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ORDER ITEMS -->
+
+            <div class="tracked-items">
+
+                <h3>
+                    <i class="fa-solid fa-cookie-bite"></i>
+                    Ordered Items
+                </h3>
+
+                <div id="trackedItems"></div>
+
+            </div>
+
+
+
+            <!-- TOTAL -->
+
+            <div class="tracked-total">
+
+                <span>Order Total</span>
+
+                <strong id="trackedTotal">
+                    Rs. 0
+                </strong>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function trackOrder() {
+
+    const enteredId =
+        document
+        .getElementById("orderIdInput")
+        .value
+        .trim()
+        .toUpperCase();
+
+
+    const message =
+        document.getElementById("trackMessage");
+
+
+    const result =
+        document.getElementById("orderResult");
+
+
+    /* ================= VALIDATION ================= */
+
+    if (enteredId === "") {
+
+        showTrackMessage(
+            "Please enter your Order ID.",
+            "error"
+        );
+
+        result.style.display = "none";
+
+        return;
+
+    }
+
+
+    /* ================= GET ALL ORDERS ================= */
+
+    const orders =
+        JSON.parse(
+            localStorage.getItem("orders")
+        ) || [];
+
+
+    /* ================= NO ORDERS ================= */
+
+    if (orders.length === 0) {
+
+        showTrackMessage(
+            "No order found. Please place an order first.",
+            "error"
+        );
+
+        result.style.display = "none";
+
+        return;
+
+    }
+
+
+    /* ================= FIND ORDER ================= */
+
+    const savedOrder =
+        orders.find(function(order) {
+
+            return String(order.orderId)
+                .trim()
+                .toUpperCase() === enteredId;
+
+        });
+
+
+    /* ================= ORDER NOT FOUND ================= */
+
+    if (!savedOrder) {
+
+        showTrackMessage(
+            "Order ID not found. Please check your Order ID and try again.",
+            "error"
+        );
+
+        result.style.display = "none";
+
+        return;
+
+    }
+
+
+    /* ================= SHOW SUCCESS ================= */
+
+    message.innerHTML = "";
+
+    result.style.display = "block";
+
+
+    /* ================= ORDER ID ================= */
+
+    document.getElementById(
+        "displayOrderId"
+    ).textContent =
+        savedOrder.orderId;
+
+
+
+    /* ================= ORDER DATE ================= */
+
+    document.getElementById(
+        "displayDate"
+    ).textContent =
+        savedOrder.createdAt || "N/A";
+
+
+
+    /* ================= CUSTOMER ================= */
+
+    document.getElementById(
+        "displayName"
+    ).textContent =
+        savedOrder.customerName || "N/A";
+
+
+
+    /* ================= PHONE ================= */
+
+    document.getElementById(
+        "displayPhone"
+    ).textContent =
+        savedOrder.phone || "N/A";
+
+
+
+    /* ================= ADDRESS ================= */
+
+    let fullAddress = "";
+
+
+    if (savedOrder.address) {
+
+        fullAddress =
+            savedOrder.address;
+
+    }
+
+
+    if (savedOrder.area) {
+
+        fullAddress +=
+            ", " +
+            savedOrder.area;
+
+    }
+
+
+    if (savedOrder.city) {
+
+        fullAddress +=
+            ", " +
+            savedOrder.city;
+
+    }
+
+
+    document.getElementById(
+        "displayAddress"
+    ).textContent =
+        fullAddress || "N/A";
+
+
+
+    /* ================= SHOW ITEMS ================= */
+
+    const itemsContainer =
+        document.getElementById(
+            "trackedItems"
+        );
+
+
+    itemsContainer.innerHTML = "";
+
+
+    let total = 0;
+
+
+    /*
+        Checkout saves items as:
+
+        order.items
+
+        NOT:
+
+        order.cart
+    */
+
+
+    const orderItems =
+        savedOrder.items || [];
+
+
+
+    if (orderItems.length === 0) {
+
+        itemsContainer.innerHTML = `
+
+            <div class="track-message error">
+
+                <i class="fa-solid fa-circle-exclamation"></i>
+
+                No items were found for this order.
+
+            </div>
+
+        `;
+
+    }
+
+
+
+    orderItems.forEach(
+        function(item) {
+
+
+            const price =
+                Number(item.price) || 0;
+
+
+            const quantity =
+                Number(item.quantity) || 1;
+
+
+            const itemTotal =
+                price * quantity;
+
+
+            total += itemTotal;
+
+
+
+            itemsContainer.innerHTML += `
+
+                <div class="tracked-item">
+
+                    <img
+                        src="${item.image}"
+                        alt="${item.name}"
+                    >
+
+
+                    <div class="tracked-item-info">
+
+                        <h4>
+                            ${item.name}
+                        </h4>
+
+
+                        <p>
+
+                            Rs.
+                            ${price.toLocaleString()}
+
+                            ×
+
+                            ${quantity}
+
+                        </p>
+
+
+                        ${
+                            item.selectedFlavors &&
+                            item.selectedFlavors.length > 0
+                            ?
+                            `
+
+                            <p>
+
+                                <strong>
+                                    Flavors:
+                                </strong>
+
+                                ${
+                                    item.selectedFlavors
+                                    .map(
+                                        function(flavor) {
+
+                                            return (
+                                                flavor.name +
+                                                " × " +
+                                                flavor.quantity
+                                            );
+
+                                        }
+                                    )
+                                    .join(", ")
+                                }
+
+                            </p>
+
+                            `
+                            :
+                            ""
+                        }
+
+                    </div>
+
+
+                    <strong class="tracked-item-price">
+
+                        Rs.
+                        ${itemTotal.toLocaleString()}
+
+                    </strong>
+
+                </div>
+
+            `;
+
+        }
+    );
+
+
+
+    /* ================= TOTAL ================= */
+
+    /*
+        Checkout already calculates the final
+        total including discount + delivery.
+
+        So use savedOrder.total when available.
+    */
+
+
+    if (savedOrder.total) {
+
+        document.getElementById(
+            "trackedTotal"
+        ).textContent =
+            savedOrder.total;
+
+    }
+    else {
+
+        document.getElementById(
+            "trackedTotal"
+        ).textContent =
+            "Rs. " +
+            total.toLocaleString();
+
+    }
+
+
+
+    /* ================= UPDATE STATUS ================= */
+
+    updateOrderStatus(
+        savedOrder.status
+    );
+
+
+
+    /* ================= SCROLL TO RESULT ================= */
+
+    setTimeout(function() {
+
+        result.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }, 100);
+
+}
+
+
+
+/* =====================================================
+                    ORDER STATUS
+===================================================== */
+
+function updateOrderStatus(status) {
+
+    const steps =
+        document.querySelectorAll(
+            ".status-step"
+        );
+
+
+    /*
+        Checkout currently creates:
+
+        "Order Confirmed"
+
+        Therefore first step will always
+        be active initially.
+    */
+
+
+    let currentStep = 1;
+
+
+    if (
+        status === "Processing"
+    ) {
+
+        currentStep = 2;
+
+    }
+
+
+    else if (
+        status === "Out for Delivery"
+    ) {
+
+        currentStep = 3;
+
+    }
+
+
+    else if (
+        status === "Delivered"
+    ) {
+
+        currentStep = 4;
+
+    }
+
+
+    steps.forEach(
+        function(step, index) {
+
+            if (
+                index <
+                currentStep
+            ) {
+
+                step.classList.add(
+                    "active"
+                );
+
+            }
+            else {
+
+                step.classList.remove(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+
+}
+
+
+
+/* =====================================================
+                    MESSAGE
+===================================================== */
+
+function showTrackMessage(
+    text,
+    type
+) {
+
+    const message =
+        document.getElementById(
+            "trackMessage"
+        );
+
+
+    message.innerHTML = `
+
+        <div class="track-message ${type}">
+
+            <i class="fa-solid fa-circle-exclamation"></i>
+
+            ${text}
+
+        </div>
+
+    `;
+
+}
+
+
+
+/* =====================================================
+                  ENTER KEY
+===================================================== */
+
+document
+    .getElementById("orderIdInput")
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key === "Enter"
+            ) {
+
+                trackOrder();
+
+            }
+
+        }
+    );
+
+</script>
+
+</body>
+
+</html>
